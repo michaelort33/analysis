@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5843af27-c11c-4453-bcde-92dfb94d680a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/reading_scraped_data-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/reading_scraped_data-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adding_zip_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/adding_zip_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/city_data/all_items_ne_7_23.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/city_data/all_items_ne_7_27.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/city_data/all_items_us_7_20.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/final_database_frames/city_v1.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/final_database_frames/city_v2.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/final_database_frames/city_v3.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/final_database_frames/city_v4.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/final_database_frames/zillow_19-06.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/final_database_frames/zip_a_v1.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/geographic_data/zip_code_database.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/geographic_data/zip_code_database_cleaned.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/translators/states_region.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/translators/states_translate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_1Bedroom2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_2Bedroom2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_3Bedroom2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_AllHomes2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_CondoCoop2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_DuplexTriplex2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_Mfr5Plus2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_Sfr2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPricePerSqft_Studio2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_1Bedroom2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_2Bedroom2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_3Bedroom2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_4Bedroom2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_5BedroomOrMore2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_AllHomes2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_CondoCoop2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_DuplexTriplex2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_Mfr5Plus2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_Sfr2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_MedianRentalPrice_Studio2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_ZriPerSqft_AllHomes2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/City_Zri_AllHomesPlusMultifamily_Summary2019-07-31.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_1Bedroom2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_2Bedroom2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_3Bedroom2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_AllHomes2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_CondoCoop2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_DuplexTriplex2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_Mfr5Plus2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_Sfr2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPricePerSqft_Studio2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_1Bedroom2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_2Bedroom2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_3Bedroom2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_4Bedroom2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_5BedroomOrMore2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_AllHomes2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_CondoCoop2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_DuplexTriplex2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_Mfr5Plus2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_Sfr2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_MedianRentalPrice_Studio2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_ZriPerSqft_AllHomes2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/Zip_Zri_AllHomesPlusMultifamily_Summary2019-08-08.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zillow/prepped_zillow_data/Zip_ZriPerSqft_AllHomes2019-08-08-zip.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/zip_data/zip_1-5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/for_download/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/for_download/data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postBuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reading_scraped_data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/reading_scraped_data.ipynb" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Q2Mp9yhZ6CWb0XESsF3a9ajvBe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scraping/splash_airdna" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5843af27-c11c-4453-bcde-92dfb94d680a" name="Default Changelist" comment="" />
+      <created>1566964418131</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566964418131</updated>
+    </task>
+    <task id="LOCAL-00001" summary="added columns to data base">
+      <created>1568080358970</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568080358970</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added columns to data base">
+      <created>1568093869849</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568093869849</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changed zip and city to min max coder">
+      <created>1568355891336</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568355891336</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changed zip and city to min max coder">
+      <created>1568520970191</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568520970191</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added columns to data base" />
+    <MESSAGE value="changed zip and city to min max coder" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed zip and city to min max coder" />
+  </component>
+</project>

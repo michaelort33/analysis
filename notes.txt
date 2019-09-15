@@ -1,0 +1,2 @@
+# nb interact for binder to web page
+nbinteract -s michaelort33/process/master reading_scraped_data.ipynb -e
