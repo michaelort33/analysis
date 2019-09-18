@@ -309,52 +309,8 @@ def update_old_cols(df, updated_old):
     return updated_old
 
 
-updated_old = update_old_cols(df, updated_old)
+updated_new = update_old_cols(df, updated_old)
 
-
-def get_history_extrapolations(my_history):
-    avg = []
-    cv = []
-    for i in my_history:
-        if type(i) is list:
-            if len(i) > 0:
-                avg.append(np.average(i))
-                cv.append(np.std(i) / np.average(i))
-            else:
-                avg.append(np.nan)
-                cv.append(np.nan)
-        else:
-            avg.append(np.nan)
-            cv.append(np.nan)
-    return avg, cv
-
-
-def add_extrapolated_revenue(updated_old):
-    # now that info is finalized add the extrapolated revenue data
-    for col_name in svg_columns:
-        # average of lists of history of svg
-        avg, cv = get_history_extrapolations(updated_old[col_name])
-        updated_old['avg_' + col_name] = avg
-        # seasonality measure
-        updated_old['seasonality_' + col_name] = cv
-
-    # the multiply by 0.3 comes from 30 days / 100 for occupancy to become a percent between 0-1
-    updated_old['expected_avg_monthly_revenue'] = (
-        updated_old['avg_nightly_revenue'].mul(updated_old['avg_monthly_occupancy'])).apply(lambda x: x * .3)
-    # divide revenue by rooms and guests to get average per room and per guest
-    updated_old['revenue_per_room'] = updated_old[
-        'avg_monthly_revenue'].divide(updated_old['rooms'])
-
-    updated_old['expected_revenue_per_room'] = updated_old[
-        'expected_avg_monthly_revenue'].divide(updated_old['rooms'])
-
-    updated_old['expected_revenue_per_guest'] = updated_old[
-        'expected_avg_monthly_revenue'].divide(updated_old['guests'])
-
-    return updated_old
-
-
-updated_old = add_extrapolated_revenue(updated_old)
 
 
 def update_new(updated_old, old):

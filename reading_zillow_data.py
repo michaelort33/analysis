@@ -11,10 +11,10 @@ names = names.split(',')
 current_date = str(datetime.date(2019, 8, 8))
 last_column_date = '2019-06'
 prefix = 'Zip_'
-
+my_path = '../housing_data/data/zillow/'
 # get region names from State abbreviations
 def translate_state_to_region(states):
-    with open('data/translators/states_region.json') as f:
+    with open('../housing_data/data/translators/states_region.json') as f:
         state_region = json.load(f)
 
     return [state_region[x] for x in states]
@@ -22,7 +22,7 @@ def translate_state_to_region(states):
 
 # get state names from abbreviations
 def translate_state_names(states):
-    with open('data/translators/states_translate.json') as f:
+    with open('../housing_data/data/translators/states_translate.json') as f:
         state_dict = json.load(f)
 
     return [state_dict[x] for x in states]
@@ -72,18 +72,18 @@ def read_write(write = False, read = True):
         for name in names:
             df = pd.read_csv(path + name + extension, encoding='ISO-8859-1', index_col=False,
                              converters={'RegionName': lambda x: str(x)})
-        df.to_csv('data/zillow/' + prefix + name + current_date + extension, index=False)
+        df.to_csv(my_path + prefix + name + current_date + extension, index=False)
 
     if read:
         # combine all the median frames
         for idx, i in enumerate(names):
             if idx ==0:
-                new_frame = pd.read_csv('data/zillow/' + prefix + i + current_date + '.csv',
+                new_frame = pd.read_csv(my_path + prefix + i + current_date + '.csv',
                                         converters={'RegionName': lambda x: str(x)})
                 new_frame = clean_zip_data(new_frame, i)
                 zillow = new_frame
             else:
-                new_frame = pd.read_csv('data/zillow/' + prefix + i + current_date + '.csv',
+                new_frame = pd.read_csv(my_path + prefix + i + current_date + '.csv',
                                         converters={'RegionName': lambda x: str(x)})
                 new_frame = clean_zip_data(new_frame, i)
                 zillow = zillow.merge(new_frame, on='state_city_zip', how='outer')
@@ -91,4 +91,4 @@ def read_write(write = False, read = True):
     return zillow
 
 zip_data = read_write(write=False, read = True)
-#zip_data.to_pickle('data/final_database_frames/zillow_19-06.pkl')
+zip_data.to_pickle('../housing_data/data/zillow/prepped_zillow_data/zillow_19-06.pkl')

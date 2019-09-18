@@ -2,25 +2,25 @@ import re
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+from itertools import compress
 
 # global variables
-all_dates = ['_a', '_b']
-scrape_date = all_dates[0]
 svg_columns = ['monthly_revenue', 'nightly_revenue', 'monthly_occupancy']
 id = 'state_city_zip'
 # id = 'state_city'
-no_change_columns = ['url', id]
 
 # read the new csv here
 df = pd.read_csv('../housing_data/data/zip_data/zip_1-5.csv')
-# df = pd.read_csv('data/all_items_ne_7_27.csv')
+# df = pd.read_csv('../housing_data/data/city_data/all_items_ne_7_27.csv')
 
 df = df.rename(columns={'min_occupancy_rate_last_12_months': 'min_monthly_occupancy_last_12_months',
                         'max_occupancy_rate_last_12_months': 'max_monthly_occupancy_last_12_months'})
 
 # read current database here
-old = pd.read_pickle('../housing_data/data/final_database_frames/zip_a_v1.pkl')
-# old = pd.read_pickle('data/final_database_frames/city_v4.pkl')
+old = pd.read_pickle('../housing_data/data/final_database_frames/zip_v1.pkl')
+
+
+# old = pd.read_pickle('../housing_data/data/final_database_frames/city_v2.pkl')
 
 def isNaN(num):
     return num != num
@@ -103,9 +103,6 @@ def get_meta_data(meta_data, my_eg_ex):
 def add_extracted_columns(df):
     # add city state zip string from url
     df[id] = df.url.str.extract('data/app/us/(.*)/overview')
-
-    # add zip
-
 
     # change rental_size to numbers and guests to numbers and convert to float
     df['rooms'] = [
@@ -266,23 +263,10 @@ def add_score_validity(df):
 df = add_score_validity(df)
 
 
-def create_copy(df):
-    # update df column names to make it scrape specific
-    needs_updating = list(df.columns[[i not in no_change_columns for i in df.columns]].values)
-    df_copy = df[needs_updating]
-    df.columns.values[[i in needs_updating for i in df.columns]] = [i + scrape_date for i in needs_updating]
-    df.columns = df.columns.values
-    df = pd.concat([df, df_copy], axis=1, sort=False)
-    return df
-
-
-df = create_copy(df)
-
-
 def add_new_columns(df, old):
     # get columns not currently on database (if any)
     new_cols = list(df.columns.difference(old.columns))
-    # add the id column we will merge on.
+    # add the id column we will merge on
     new_cols.append(id)
     # merge the new cols
     my_updated_old = old.merge(df[new_cols], how='right', on=id)
@@ -293,24 +277,41 @@ def add_new_columns(df, old):
 updated_old = add_new_columns(df, old)
 
 
+def get_extension(x, y):
+    extended = False
+    if type(x) is list and type(y) is list:
+        for group_size in list(range(min(len(x),len(y))+1)):
+            if y[:group_size] == x[(len(x)-group_size):]:
+                extended_list = x+y[group_size:]
+                extended = True
+    if extended:
+        return extended_list
+    else:
+        return y
+
+
 def update_old_cols(df, updated_old):
-    needs_updating = list(df.columns[[i not in no_change_columns for i in df.columns]].values)
-    added_revenue_cols = needs_updating + [id]
+    added_revenue_cols = df.columns.values
     added_revenue = updated_old[added_revenue_cols].merge(df[added_revenue_cols],
                                                           how='outer',
                                                           on=id)
 
+    needs_updating = list(df.columns[[i != id for i in df.columns]].values)
     for col_name in tqdm(needs_updating):
         added_revenue = added_revenue.astype({col_name + '_x': 'object'})
         for idx, i in enumerate(added_revenue.iterrows()):
             if not isNaN(i[1][col_name + '_y']):
                 if i[1][col_name + '_y'] != i[1][col_name + '_x']:
-                    added_revenue.at[idx, col_name + '_x'] = i[1][col_name + '_y']
+                    if col_name in svg_columns:
+                        added_revenue.at[idx, col_name + '_x'] = get_extension(i[1][col_name + '_x'],
+                                                                               i[1][col_name + '_y'])
+                    else:
+                        added_revenue.at[idx, col_name + '_x'] = i[1][col_name + '_y']
         updated_old[col_name] = added_revenue[col_name + '_x']
     return updated_old
 
 
-updated_new = update_old_cols(df, updated_old)
+updated_old = update_old_cols(df, updated_old)
 
 
 def update_new(updated_old, old):
@@ -321,4 +322,5 @@ def update_new(updated_old, old):
 
 updated_new = update_new(updated_old, old)
 
-#updated_new.to_pickle('../housing_data/data/final_database_frames/zip_a_v1.pkl')
+updated_new.to_pickle('../housing_data/data/final_database_frames/zip_v1.pkl')
+#updated_new.to_pickle('../housing_data/data/final_database_frames/city_v3.pkl')
